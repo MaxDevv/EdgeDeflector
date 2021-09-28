@@ -56,7 +56,7 @@ namespace EdgeDeflector
             string msedge_protocol_pattern = "^microsoft-edge:/*";
 
             Regex rgx = new Regex(msedge_protocol_pattern);
-            string new_uri = rgx.Replace(uri, string.Empty);
+            string new_uri = rgx.Replace(uri, string.Empty).Replace("bing.com/search?q=", "google.com/search?q=");
 
             if (IsHttpUri(new_uri))
             {
